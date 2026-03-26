@@ -304,92 +304,102 @@
             font-size: 14px;
         }
         
-    .animated-skull-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 250px; /* يمكن تعديل الحجم حسب الحاجة */
-        height: 300px; /* يمكن تعديل الحجم حسب الحاجة */
-        position: relative;
-        margin: 20px auto; /* لوسط الجمجمة */
-    }
+/* تنسيق الحاوية الرئيسية للجمجمة */
+.skull-container {
+    background: #111; /* خلفية سوداء غامقة */
+    border: 2px solid #555; /* إطار رمادي غامق */
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px; /* ضمان مساحة كافية للجمجمة */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* هالة حمراء مرعبة */
+    overflow: hidden; /* لمنع الجمجمة من الخروج بره الإطار */
+}
 
-    .skull-head {
-        width: 180px;
-        height: 220px;
-        background-color: #820404; /* لون الجمجمة */
-        border-radius: 50% 50% 45% 45% / 60% 60% 50% 50%; /* شكل الجمجمة المستدير من الأعلى والمدبب قليلاً من الأسفل */
-        position: relative;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* ظل أولي للوهج */
-        animation: skullGlow 2s infinite alternate ease-in-out; /* حركة الوهج النابض */
-    }
+/* تنسيق الجمجمة كعنصر واحد */
+.scary-skull {
+    font-size: 70px; /* حجم الجمجمة */
+    line-height: 1;
+    position: relative;
+    color: #eee; /* لون أبيض مائل للرمادي */
+    
+    /* الحركة المرعبة (الارتعاش والتحرك المتقطع) */
+    animation: frighteningMove 5s infinite;
+}
 
-    .skull-eye {
-        width: 45px;
-        height: 45px;
-        background-color: #222; /* لون تجاويف العين الداكنة */
-        border-radius: 50%;
-        position: absolute;
-        top: 60px; /* تعديل موضع العين */
-        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* وهج أحمر للعيون */
-        animation: eyeGlow 1.5s infinite alternate ease-in-out; /* حركة وهج العين النابض */
+/* حركة الرعب: اهتزاز، دوران خفيف، وتحرك عشوائي */
+@keyframes frighteningMove {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0);
     }
+    10% {
+        transform: translate(-5px, 3px) rotate(-5deg); /* تحرك فجائي */
+    }
+    15% {
+        transform: translate(4px, -2px) rotate(3deg); /* ارتعاش */
+    }
+    25% {
+        transform: translate(-3px, 1px) rotate(-10deg); /* ميلان عشوائي */
+    }
+    40% {
+        transform: translate(6px, 4px) rotate(8deg);
+    }
+    60% {
+        transform: translate(-10px, -5px) rotate(-15deg); /* تحرك أبعد */
+    }
+    75% {
+        transform: translate(2px, 2px) rotate(0); /* لحظة سكون مخادعة */
+    }
+    80% {
+        transform: translate(-15px, -10px) scale(1.1); /* قفزة فجائية وتكبير */
+    }
+    85% {
+        transform: translate(5px, 0) scale(1); /* عودة فجائية */
+    }
+}
 
-    .left-eye {
-        left: 35px;
-    }
+/* تأثير العيون المضيئة للرعب */
+.glowing-eyes {
+    position: absolute;
+    top: 25px; /* ظبط مكان العيون على الجمجمة */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* عرض منطقة العيون */
+    display: flex;
+    justify-content: space-around;
+}
 
-    .right-eye {
-        right: 35px;
-    }
+.eye {
+    width: 10px;
+    height: 10px;
+    background-color: #ff3333; /* لون العيون أحمر دموي */
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333; /* توهج */
+    animation: eyePulse 1.5s infinite alternate; /* نبض العيون */
+}
 
-    .skull-nose {
-        width: 35px;
-        height: 35px;
-        background-color: #222; /* لون تجويف الأنف الداكن */
-        position: absolute;
-        top: 120px;
-        left: 50%;
-        transform: translateX(-50%) rotate(45deg); /* شكل معيني للأنف */
-        border-radius: 50% 50% 0 50%; /* لجعلها تبدو كقلب مقلوب */
+/* حركة نبض العيون */
+@keyframes eyePulse {
+    from {
+        opacity: 0.5;
+        transform: scale(0.9);
     }
+    to {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
 
-    .skull-teeth {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 4px; /* المسافة بين الأسنان */
-    }
-
-    .tooth {
-        width: 16px;
-        height: 22px;
-        background-color: #f0f0f0; /* لون الأسنان */
-        border: 1px solid #222; /* حدود الأسنان */
-        border-radius: 3px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-
-    /* حركات الـ Keyframe */
-    @keyframes skullGlow {
-        from {
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), inset 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-        to {
-            box-shadow: 0 0 30px rgba(255, 255, 255, 1), inset 0 0 20px rgba(255, 255, 255, 0.8);
-        }
-    }
-
-    @keyframes eyeGlow {
-        from {
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-        }
-        to {
-            box-shadow: 0 0 25px rgba(255, 0, 0, 1);
-        }
-    }
+/* تنسيق النص الاختياري */
+.skull-container p {
+    color: #aaa;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
 
         .data-counter {
             background: #e8f4fd;
@@ -477,19 +487,15 @@
     <div class="current-time">
         وقت حظر الرقم: <span id="egypt-clock">00:00:00</span>
 </div>
-<div class="animated-skull-container">
-    <div class="skull-head">
-        <div class="skull-eye left-eye"></div>
-        <div class="skull-eye right-eye"></div>
-        <div class="skull-nose"></div>
-        <div class="skull-teeth">
-            <span class="tooth"></span>
-            <span class="tooth"></span>
-            <span class="tooth"></span>
-            <span class="tooth"></span>
-            <span class="tooth"></span>
+<div class="bonus-offer skull-container">
+    <div class="scary-skull">
+        <span class="skull-face">💀</span>
+        <div class="glowing-eyes">
+            <span class="eye left"></span>
+            <span class="eye right"></span>
         </div>
     </div>
+    <p>انتظر...</p>
 </div>
 
             <div class="data-counter">
