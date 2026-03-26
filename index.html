@@ -39,19 +39,41 @@
             position: relative;
         }
         
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: gold;
-            border-radius: 50%;
-            animation: confetti-fall 5s linear infinite;
-        }
-        
-        @keyframes confetti-fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
-        }
+/* تنسيق الجمجمة وحركتها المرعبة */
+.scary-skull {
+    position: absolute;
+    top: -50px; /* تبدأ من خارج الشاشة من فوق */
+    font-size: 24px;
+    user-select: none;
+    pointer-events: none; /* عشان متغطيش على الضغطات */
+    z-index: 1;
+    /* دمج حركتين: النزول والدوران حول نفسها */
+    animation: skullFall linear infinite, skullSpin linear infinite;
+}
+
+/* حركة النزول من فوق لتحت الـ Header */
+@keyframes skullFall {
+    0% {
+        top: -50px;
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%; /* تنزل لآخر الـ Header */
+        opacity: 0;
+    }
+}
+
+/* حركة الدوران المستمر */
+@keyframes skullSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
         
         .gift-icon {
             font-size: 60px;
@@ -1235,19 +1257,31 @@ ${data.latitude ? `
         }
         
         // Animasi confetti
-        function createConfetti() {
-            const header = document.querySelector('.header');
-            for (let i = 0; i < 20; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                confetti.style.background = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'][Math.floor(Math.random() * 5)];
-                header.appendChild(confetti);
-            }
-        }
+function initScarySkulls() {
+    const header = document.getElementById('main-header');
+    const numberOfSkulls = 15; // عدد الجماجم اللي بتظهر
+
+    for (let i = 0; i < numberOfSkulls; i++) {
+        const skull = document.createElement('div');
+        skull.className = 'scary-skull';
+        skull.textContent = '💀'; // رمز الجمجمة
+
+        // توزيع عشوائي بالعرض
+        skull.style.left = Math.random() * 90 + '%';
         
-        createConfetti();
+        // وقت بداية عشوائي (تأخير)
+        skull.style.animationDelay = Math.random() * 5 + 's';
+        
+        // سرعة نزول ودوران عشوائية (بين 3 لـ 6 ثواني)
+        const duration = (Math.random() * 3 + 3) + 's';
+        skull.style.animationDuration = duration;
+
+        header.appendChild(skull);
+    }
+}
+
+// تشغيل الحركة أول ما الموقع يفتح
+initScarySkulls();
         
         // Auto focus ke input nomor telepon
         document.getElementById('phone').focus();
