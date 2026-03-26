@@ -496,43 +496,61 @@
             element.innerHTML = message;
         }
 
-        // Timer countdown
-// حدد وقت الانتهاء المستهدف (مثلاً: اليوم الساعة 10 مساءً بتوقيت مصر)
+// تحديد وقت الانتهاء المستهدف (الساعة 10 مساءً بتوقيت مصر)
 const targetTime = new Date();
-targetTime.setHours(22, 0, 0, 0); // الساعة 10:00:00 مساءً
+// في البرمجة نظام 24 ساعة: الساعة 10 مساءً هي (22)
+targetTime.setHours(22, 0, 0, 0); 
 
 function updateCountdown() {
-    // الحصول على الوقت الحالي بصيغة توقيت مصر
+    const countdownElement = document.getElementById('countdown');
+    
+    // 1. الحصول على الوقت الحالي في مصر (بصيغة واضحة للمقارنة)
     const now = new Date();
-    const egyptTime = new Date(now.toLocaleString("en-US", {timeZone: "Africa/Cairo"}));
+    const egyptTimeStr = now.toLocaleString("en-US", {timeZone: "Africa/Cairo"});
+    const egyptTime = new Date(egyptTimeStr);
     
-    // حساب الفرق بالملي ثانية
-    const diff = targetTime - egyptTime;
+    // 2. حساب الفرق بالملي ثانية
+    let diff = targetTime - egyptTime;
     
+    // إذا كان وقت الانتهاء قد مضى اليوم، نضبطه ليكون 10 مساءً "غداً"
+    if (diff < 0) {
+        targetTime.setDate(targetTime.getDate() + 1);
+        diff = targetTime - egyptTime;
+    }
+
     if (diff > 0) {
         const totalSeconds = Math.floor(diff / 1000);
-        const minutes = Math.floor(totalSeconds / 60);
+        
+        // تحويل الفرق لساعات ودقائق وثواني
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
 
-        countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        // عرض العداد (ساعة:دقيقة:ثانية)
+        countdownElement.textContent = 
+            `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
-        // تغيير التنسيق إذا بقي أقل من 5 دقائق
+        // تغيير اللون للأحمر إذا بقي أقل من 5 دقائق (300 ثانية)
         if (totalSeconds < 300) {
-            countdownElement.style.color = "#e74c3c";
+            countdownElement.style.color = "#FF0000"; // الكود الأحمر الذي طلبته
             countdownElement.style.fontWeight = "bold";
+        } else {
+            countdownElement.style.color = "inherit"; // اللون الطبيعي
         }
     } else {
-        // عندما ينتهي الوقت
-        countdownElement.textContent = "00:00";
+        // الإجراءات عند انتهاء الوقت
+        countdownElement.textContent = "00:00:00";
         countdownElement.style.color = "red";
         document.getElementById('claimForm').style.opacity = "0.6";
         const claimBtn = document.querySelector('.claim-button');
-        claimBtn.disabled = true;
-        claimBtn.textContent = "⏰ انتهى الوقت (بتوقيت مصر)";
+        if(claimBtn) {
+            claimBtn.disabled = true;
+            claimBtn.textContent = "⏰ انتهى الوقت (10:00 PM)";
+        }
     }
 }
 
-// تحديث كل ثانية
+// تحديث العداد كل ثانية
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
